@@ -1,17 +1,15 @@
 'user strict';
 var sql = require('./db.js');
 
-//customer object constructor
-var customer = function(customer){
-    this.username = customer.username;
-    this.name = customer.name;
-    this.phonNo = customer.phonNo;
-    this.password = customer.password;
+//Table object constructor
+var Table = function(table){
+    this.status = table.status ? table.status != Null : 1 ;
+    this.noOfSeat = table.noOfSeat;
     this.created_at = new Date();
 };
 
-customer.createCustomer = function (newCustomer, result) {    
-    sql.query("INSERT INTO customer set ?", newCustomer, function (err, res) {
+Table.createTable = function (newTable, result) {    
+    sql.query("INSERT INTO `table` set ?", newTable, function (err, res) {
             
             if(err) {
                 console.log("error: ", err);
@@ -24,23 +22,23 @@ customer.createCustomer = function (newCustomer, result) {
         });           
 };
 
-customer.getAllCustomer = function (result) {
-    sql.query("Select * from customer", function (err, res) {
+Table.getAllTable = function (result) {
+    sql.query("Select * from `table`", function (err, res) {
 
             if(err) {
                 console.log("error: ", err);
                 result(null, err);
             }
             else{
-              console.log('customer : ', res);  
+              console.log('table : ', res);  
 
              result(null, res);
             }
         });   
 }
 
-customer.getCustomerByUsername = function (customerusername, result) {
-    sql.query("Select * from customer where username = ? ", customerusername, function (err, res) {             
+Table.getTableByNo = function (tableno, result) {
+    sql.query("Select * from `table` where tableNo = ? ", tableno, function (err, res) {             
             if(err) {
                 console.log("error: ", err);
                 result(err, null);
@@ -51,9 +49,9 @@ customer.getCustomerByUsername = function (customerusername, result) {
         });   
 };
 
-
-customer.updateByUsername = function(customerusername, customer, result){
-    sql.query("UPDATE customer SET name = ?,phonNo = ?,password = ? WHERE username = ?", [customer.name, customer.phonNo, customer.password, customerusername], function (err, res) {
+// Not yet working properly -- need help 
+Table.updateByNo = function(tableno, table, result){
+    sql.query("UPDATE `table` SET status = ? WHERE tableNo = ?", [table.status, tableno], function (err, res) {
             if(err) {
                 console.log("error: ", err);
                   result(null, err);
@@ -64,8 +62,8 @@ customer.updateByUsername = function(customerusername, customer, result){
               }); 
   };
 
-  customer.remove = function(customerusername, result){
-       sql.query("DELETE FROM customer WHERE username = ?", [customerusername], function (err, res) {
+  Table.remove = function(tableno, result){
+       sql.query("DELETE FROM `table` WHERE tableNo = ?", [tableno], function (err, res) {
   
                   if(err) {
                       console.log("error: ", err);
@@ -79,4 +77,4 @@ customer.updateByUsername = function(customerusername, customer, result){
   };
   
 
-module.exports= customer;
+module.exports= Table;
