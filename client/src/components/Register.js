@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import axios from 'axios';
 import styled from 'styled-components';
 import TitleBox from "./reusableComponents/TitleBox"
 import FormatInputField from "./reusableComponents/InputField";
@@ -47,7 +48,7 @@ class register extends Component {
       username: '',
       name: '',
       password: '',
-      phone: ''
+      phonNo: ''
     }
   }
 
@@ -59,10 +60,17 @@ class register extends Component {
   submitHandler = (event) => {
     event.preventDefault()
     console.log(this.state) 
+    axios.post("http://localhost:5000/customers", this.state)
+      .then(response => {
+        console.log(response);
+      })
+      .catch(error => {
+        console.log(error);
+      })
   }
 
   render() {
-    const {username, name, password, phone} = this.state
+    const {username, name, password, phonNo} = this.state
     return (
         <RegisterWrapper>
           <TitleBox heading="REGISTER" />
@@ -73,7 +81,7 @@ class register extends Component {
                 <FormatInputField type="text" name="username" placeholder="Username" value={username} onChange={this.changeHandler} />
                 <FormatInputField type="text" name="name" placeholder="Name" value={name} onChange={this.changeHandler} />
                 <FormatInputField type="password" name="password" placeholder="Password" value={password} onChange={this.changeHandler} />
-                <FormatInputField type="text" name="phone" placeholder="Phone Number" value={phone} onChange={this.changeHandler} />
+                <FormatInputField type="text" name="phonNo" placeholder="Phone Number" value={phonNo} onChange={this.changeHandler} />
                 <FormButton type="submit" text="SUBMIT" to="/login"/>
                 <LoginText>Already a user? <NavLink to="/login">Login</NavLink> </LoginText>
             </RegisterBox>
