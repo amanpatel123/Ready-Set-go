@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+// import logo from './logo.svg';
+// import './App.css';
+import Register from './components/Register';
+import Login from './components/Login';
+import Dropdown from './components/DropDown';
+// import Error from './components/Error';
 
 class App extends Component {
 state = {
@@ -26,17 +31,32 @@ state = {
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        // Render the newly fetched data inside of this.state.data 
-        <p className="App-intro">{this.state.data.map(home => <div>{home.task}</div>)}
-        </p>
-      </div>
+      // <div className="App">
+      //   <header className="App-header">
+      //     <img src={logo} className="App-logo" alt="logo" />
+      //     <h1 className="App-title">Welcome to React</h1>
+      //   </header>
+      //   // Render the newly fetched data inside of this.state.data 
+      //   <p className="App-intro">{this.state.data.map(home => <div>{home.task}</div>)}
+      //   </p>
+      // </div>
+      <BrowserRouter>
+        <div>
+            <Switch>
+             <Route path="/" component={Register} exact/>
+             <Route path="/login" component={Login}/>
+             {/* <Redirect from="/login" to="/contact" /> */}
+             <Route path="/contact" component={Dropdown}/>
+            {/* <Route component={Error}/> */}
+           </Switch>
+          {/* <Navigation /> */}
+        </div> 
+      </BrowserRouter>
     );
   }
 }
 
 export default App;
+
+
+ 
