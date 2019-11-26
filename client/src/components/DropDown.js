@@ -37,7 +37,7 @@ showDropdownMenu(event) {
 
           { this.state.displayMenu ? (
           <ul>
-         <li><NavLink to="/login">Dine-In</NavLink></li>
+         <li><NavLink to="/table">Dine-In</NavLink></li>
          <li><NavLink to="/login">Take-Out</NavLink></li>
           </ul>
         ):

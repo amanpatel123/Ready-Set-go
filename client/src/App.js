@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-// import logo from './logo.svg';
+// import Background from './background.jpg';
 // import './App.css';
 import Register from './components/Register';
 import Login from './components/Login';
-import Dropdown from './components/DropDown';
-// import Error from './components/Error';
+// import Dropdown from './components/DropDown';
+import Main from './components/MainPage';
+import Table from './components/Table';
+import Order from './components/OrderFood';
+import Payment from './components/Payment';
 
 class App extends Component {
 state = {
@@ -33,7 +36,7 @@ state = {
     return (
       // <div className="App">
       //   <header className="App-header">
-      //     <img src={logo} className="App-logo" alt="logo" />
+         
       //     <h1 className="App-title">Welcome to React</h1>
       //   </header>
       //   // Render the newly fetched data inside of this.state.data 
@@ -42,12 +45,15 @@ state = {
       // </div>
       <BrowserRouter>
         <div>
+        {/* <img src={Background} className="App-logo" alt="logo" /> */}
             <Switch>
              <Route path="/" component={Register} exact/>
              <Route path="/login" component={Login}/>
              {/* <Redirect from="/login" to="/contact" /> */}
-             <Route path="/contact" component={Dropdown}/>
-            {/* <Route component={Error}/> */}
+             <Route path="/main" component={Main}/>
+             <Route path="/table" component={Table}/>
+            <Route path="/orderfood" component={Order}/>
+            <Route path="/payment" component={Payment}/>
            </Switch>
           {/* <Navigation /> */}
         </div> 
