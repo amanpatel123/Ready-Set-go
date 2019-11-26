@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import styled from 'styled-components';
 import TitleBox from "./reusableComponents/TitleBox";
 import FormatInputField from "./reusableComponents/InputField";
@@ -38,6 +39,13 @@ class Login extends React.Component {
       submitHandler = (event) => {
         event.preventDefault()
         console.log(this.state) 
+        axios.post("http://localhost:5000/login", this.state)
+        .then(response => {
+          console.log(response);
+        })
+        .catch(error => {
+          console.log(error);
+        })
       }
 
    render() {

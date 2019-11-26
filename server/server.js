@@ -1,8 +1,16 @@
 const express = require('express');
 var cors = require('cors');
 const app = express();
+const flash = require('connect-flash');
+const passport = require('passport');
+var session = require('express-session')
+//Passport
+app.use(passport.initialize());
+app.use(passport.session());
+require('./app/config/passport')(passport);
 
 app.use(cors())
+app.use(flash());
 const bodyParser = require('body-parser');
 const port = process.env.PORT || 5000;
 
@@ -26,9 +34,14 @@ app.listen(port, () => console.log(`Listening on port ${port}`));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+
+// Session
+app.use(session({
+	secret: 'fjakfh2q73q8hueohda',
+	resave: true,
+	saveUninitialized: true
+}))
+
+
 var routes = require('./app/routes/appRoutes'); //importing route
-routes(app); //register the route
-// create a GET route
-// app.get('/express_backend', (req, res) => {
-//   res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT' });
-// });
+routes(app); 

@@ -65,6 +65,10 @@ module.exports = function(app) {
     .put(itemsController.update_a_itemsAvailability)
     .delete(itemsController.delete_a_item);
 
+    //route for /login
+    app.route('/login')
+    .post(customerContoller.authenticate);
+
 
   };
 
