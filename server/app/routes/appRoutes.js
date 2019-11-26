@@ -2,8 +2,10 @@
 module.exports = function(app) {
   var todoList = require('../controllers/appController');
   var customerContoller = require('../controllers/customerContoller')
+  var managerContoller = require('../controllers/managerController')
   var tableController = require('../controllers/tableController')
   var itemsController = require('../controllers/itemsController')
+
 
 
   // todoList Routes ---> this has to be deleted
@@ -30,6 +32,16 @@ module.exports = function(app) {
     .put(customerContoller.update_a_customer)
     .delete(customerContoller.delete_a_customer);
 
+     // routes for Manager
+     app.route('/manager')
+     .get(managerContoller.list_all_manager)
+     .post(managerContoller.create_a_manager);
+ 
+     app.route('/manager/:managerusername')
+     .get(managerContoller.read_a_manager)
+     .put(managerContoller.update_a_manager)
+     .delete(managerContoller.delete_a_manager);
+    
 
     // routes for Table. Update the status using put request 
     app.route('/tables')
