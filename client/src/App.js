@@ -4,7 +4,11 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 // import './App.css';
 import Register from './components/Register';
 import Login from './components/Login';
-import Dropdown from './components/DropDown';
+// import Dropdown from './components/DropDown';
+import Main from './components/MainPage';
+import Table from './components/Table';
+import Order from './components/OrderFood';
+import Payment from './components/Payment';
 // import Error from './components/Error';
 
 class App extends Component {
@@ -46,7 +50,11 @@ state = {
              <Route path="/" component={Register} exact/>
              <Route path="/login" component={Login}/>
              {/* <Redirect from="/login" to="/contact" /> */}
-             <Route path="/contact" component={Dropdown}/>
+             {/* <Route path="/contact" component={Dropdown}/> */}
+             <Route path="/main" component={Main}/>
+             <Route path="/table" component={Table}/>
+             <Route path="/orderfood" component={Order}/>
+             <Route path="/payment" component={Payment}/>
             {/* <Route component={Error}/> */}
            </Switch>
           {/* <Navigation /> */}

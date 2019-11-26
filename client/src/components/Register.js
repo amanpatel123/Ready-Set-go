@@ -82,7 +82,7 @@ class register extends Component {
                 <FormatInputField type="text" name="name" placeholder="Name" value={name} onChange={this.changeHandler} />
                 <FormatInputField type="password" name="password" placeholder="Password" value={password} onChange={this.changeHandler} />
                 <FormatInputField type="text" name="phonNo" placeholder="Phone Number" value={phonNo} onChange={this.changeHandler} />
-                <FormButton type="submit" text="SUBMIT" to="/login"/>
+                <FormButton type="submit" text="SUBMIT" to="/main"/>
                 <LoginText>Already a user? <NavLink to="/login">Login</NavLink> </LoginText>
             </RegisterBox>
        </RegisterWrapper>
