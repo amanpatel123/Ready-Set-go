@@ -9,6 +9,7 @@ import Main from './components/MainPage';
 import Table from './components/Table';
 import Order from './components/OrderFood';
 import Payment from './components/Payment';
+import OrderPlaced from './components/OrderPlaced';
 // import Error from './components/Error';
 
 class App extends Component {
@@ -55,6 +56,7 @@ state = {
              <Route path="/table" component={Table}/>
              <Route path="/orderfood" component={Order}/>
              <Route path="/payment" component={Payment}/>
+             <Route path="/success" component={OrderPlaced}/>
             {/* <Route component={Error}/> */}
            </Switch>
           {/* <Navigation /> */}
