@@ -17,13 +17,14 @@ margin-top: 15px;
 
 const Div = styled.div`
 margin-top: 20px;
+margin-left: 12px;
 `;
 
 class Table extends Component {
     render() {
         return (
            <Wrapper>
-               <Text>ORDER PLACED</Text><br />
+               <Text>ORDER PLACED!!!</Text><br />
                <Div> 
                 <Button type="submit" text="MAIN PAGE" to="/main" />
                </Div>

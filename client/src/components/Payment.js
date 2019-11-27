@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import TitleBox from "./reusableComponents/TitleBox"
 import Button from "./reusableComponents/Button";
+import { NavLink } from 'react-router-dom';
 
 const PaymentWrapper = styled.div`
 padding-left: 500px;
@@ -61,7 +62,7 @@ const Payment = () => {
             <PaymentBox>
                 <Text>Pay at Pickup</Text>
                 <Text style={{"font-size": "15px"}}>You can just pay when you arrive!</Text>
-                <PayButton>Pay Later</PayButton>
+                <PayButton><NavLink to="/success"  style={{color: "black", textDecoration: "None"}} activeStyle={{fontWeight: "bold",color: "black"}}>Pay Later</NavLink></PayButton>
                 <Separator><Text>OR</Text></Separator>
                 <Text>Pay Now</Text>
                 <InputField type="text" name="cardnumber" placeholder="Credit Card Number" style={{width: "450px", height: "25px", "margin-top": "25px"}} />
