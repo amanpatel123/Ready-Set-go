@@ -38,7 +38,7 @@ class Table extends Component {
            <Wrapper>
                <Div> 
                 <Button type="submit" style={{padding: "15px 41px"}} ><NavLink to="/admintable"  style={{color: "white", textDecoration: "None"}} activeStyle={{fontWeight: "bold",color: "black"}}>UPDATE TABLE</NavLink></Button><br /><br />
-                <Button type="submit" style={{padding: "15px 43px"}} ><NavLink to="/adminmenu"  style={{color: "white", textDecoration: "None"}} activeStyle={{fontWeight: "bold",color: "black"}}>UPDATE MENU</NavLink></Button><br /><br />
+                <Button type="submit" style={{padding: "15px 43px"}} ><NavLink to="/edit"  style={{color: "white", textDecoration: "None"}} activeStyle={{fontWeight: "bold",color: "black"}}>UPDATE MENU</NavLink></Button><br /><br />
                 <Button type="submit" ><NavLink to="/adminorder"  style={{color: "white", textDecoration: "None"}} activeStyle={{fontWeight: "bold",color: "black"}}>UPDATE ORDERS</NavLink></Button>
                </Div>
             </Wrapper>

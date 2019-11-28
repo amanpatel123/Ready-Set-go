@@ -14,6 +14,7 @@ import AdminMainPage from './components/AdminMainPage';
 import AdminTableView from './components/AdminTableView';
 import AdminSuccess from './components/AdminSuccess';
 import AdminOrder from './components/AdminOrder';
+import edit from './components/editMenu';
 // import Error from './components/Error';
 
 class App extends Component {
@@ -65,6 +66,8 @@ state = {
              <Route path="/admintable" component={AdminTableView}/>
              <Route path="/adminsuccess" component={AdminSuccess}/>
              <Route path="/adminorder" component={AdminOrder}/>
+             <Route path="/edit" component={edit}/>
+
             {/* <Route component={Error}/> */}
            </Switch>
           {/* <Navigation /> */}

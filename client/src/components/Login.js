@@ -37,7 +37,7 @@ class Login extends React.Component {
         if(event.target.value==='admin')
         {
           this.setState({
-            pathname: '/payment'
+            pathname: '/admin'
           })
         }
       }
