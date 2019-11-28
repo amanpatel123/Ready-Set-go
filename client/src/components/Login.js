@@ -48,7 +48,7 @@ class Login extends React.Component {
         <LoginBox onSubmit={this.submitHandler}>
             <FormatInputField type="text" name="username" placeholder="Username" value={username} onChange={this.changeHandler} />
             <FormatInputField type="password" name="password" placeholder="Password" value={password} onChange={this.changeHandler} />
-            <FormButton type="submit" text="SUBMIT" to="/main" />
+            <FormButton type="submit" text="SUBMIT" to="/admin" />
             {/* <button onClick={this.onSubmit}>SUBMIT</button> */}
             {/* <NavLink to="/contact">Login</NavLink>  */}
         </LoginBox>  

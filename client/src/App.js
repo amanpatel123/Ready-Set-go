@@ -10,6 +10,10 @@ import Table from './components/Table';
 import Order from './components/OrderFood';
 import Payment from './components/Payment';
 import OrderPlaced from './components/OrderPlaced';
+import AdminMainPage from './components/AdminMainPage';
+import AdminTableView from './components/AdminTableView';
+import AdminSuccess from './components/AdminSuccess';
+import AdminOrder from './components/AdminOrder';
 // import Error from './components/Error';
 
 class App extends Component {
@@ -57,6 +61,10 @@ state = {
              <Route path="/orderfood" component={Order}/>
              <Route path="/payment" component={Payment}/>
              <Route path="/success" component={OrderPlaced}/>
+             <Route path="/admin" component={AdminMainPage}/>
+             <Route path="/admintable" component={AdminTableView}/>
+             <Route path="/adminsuccess" component={AdminSuccess}/>
+             <Route path="/adminorder" component={AdminOrder}/>
             {/* <Route component={Error}/> */}
            </Switch>
           {/* <Navigation /> */}
